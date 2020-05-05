@@ -1,4 +1,3 @@
-const { expect } = require('chai');
 const {
   accessName,
   accessObject,
@@ -9,16 +8,15 @@ const {
 } = require('./objects-challenges');
 
 describe('object practice', function () {
-
   describe('accessName()', () => {
     it('can acess name property from a person object', () => {
       let person = { name: 'Haz' };
       let actual = accessName(person);
       let expected = 'Haz';
-      expect(actual).to.equal(expected);
+      expect(actual).toBe(expected);
       actual = accessName({ name: 'Sam' });
       expected = 'Sam';
-      expect(actual).to.equal(expected);
+      expect(actual).toBe(expected);
     });
   });
 
@@ -33,10 +31,10 @@ describe('object practice', function () {
       };
       let actual = accessObject(item, 'fruit');
       let expected = 'apple';
-      expect(actual).to.equal(expected);
+      expect(actual).toBe(expected);
       actual = accessObject(faveBook, 'title');
       expected = 'Blood Meridian';
-      expect(actual).to.equal(expected);
+      expect(actual).toBe(expected);
     });
   });
 
@@ -62,7 +60,7 @@ describe('object practice', function () {
         debut: 'White Teeth',
       };
       let actual = removeName(author);
-      expect(actual).to.eql({ debut: 'White Teeth' });
+      expect(actual).toEqual({ debut: 'White Teeth' });
     });
   });
 
@@ -73,7 +71,7 @@ describe('object practice', function () {
         director: 'Barry Jenkins',
       };
       let actual = removeProperty(oscarWinner, 'title');
-      expect(actual).to.eql({ director: 'Barry Jenkins' });
+      expect(actual).toEqual({ director: 'Barry Jenkins' });
     });
     it('repeatedly removes given properties from a object', () => {
       const oscarWinner = {
@@ -81,9 +79,9 @@ describe('object practice', function () {
         director: 'Barry Jenkins',
       };
       let actual = removeProperty(oscarWinner, 'title');
-      expect(actual).to.eql({ director: 'Barry Jenkins' });
+      expect(actual).toEqual({ director: 'Barry Jenkins' });
       actual = removeProperty(oscarWinner, 'director');
-      expect(actual).to.eql({});
+      expect(actual).toEqual({});
     });
     it('returns the same object if a property inside the object is passed', () => {
       const oscarWinner = {
@@ -91,7 +89,7 @@ describe('object practice', function () {
         director: 'Barry Jenkins',
       };
       let actual = removeProperty(oscarWinner, 'cast');
-      expect(actual).to.eql({
+      expect(actual).toEqual({
         title: 'Moonlight',
         director: 'Barry Jenkins',
       });
@@ -103,16 +101,14 @@ describe('object practice', function () {
       const keyValuePair = ['name', 'mitch'];
       const person = { job: 'teacher' };
       let actual = addProperty(person, keyValuePair);
-      expect(actual).to.eql({ name: 'mitch', job: 'teacher' });
+      expect(actual).toEqual({ name: 'mitch', job: 'teacher' });
     });
     it('returns the same object if no key-value pair is passed', () => {
       const person = { job: 'teacher' };
       let actual = addProperty(person);
-      expect(actual).to.eql({ job: 'teacher' });
+      expect(actual).toEqual({ job: 'teacher' });
     });
   });
 });
-
-
 
 var FILL_ME_IN;
