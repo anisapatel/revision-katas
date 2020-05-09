@@ -33,12 +33,6 @@ const getMiddle = (arr) => {
   // e.g. getMiddle(['a']) // should return 'a'
   // e.g. getMiddle([42, 20, 13, 6]) // should return [20, 13]
   // e.g. getMiddle([42, 20, 13, 6, 100]) // should return [13]
-  if (arr.length === 1) {
-    return [arr[0]];
-  }
-  if (arr.length === 2) {
-    return [arr[0], arr[1]];
-  }
   if (arr.length % 2 !== 0) {
     return [arr[Math.floor(arr.length / 2)]];
   }
