@@ -18,8 +18,8 @@
     "url": "https://github.com/northcoders/fundamentals-revision/issues"
   },
   "homepage": "https://github.com/northcoders/fundamentals-revision#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "jest": "^26.0.1"
-  },
-  "devDependencies": {}
+  }
 }

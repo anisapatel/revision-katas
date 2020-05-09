@@ -1,36 +1,36 @@
-'use strict';
+"use strict";
 
 const {
   getLastElement,
   getOuterSum,
   getAnyItem,
   getMiddle,
-} = require('./array-challenges');
+} = require("./array-challenges");
 
-describe('accessing arrays', () => {
-  describe('getLastElement()', () => {
-    it('can access last element of an array', () => {
-      const words = ['hello', 'there', 'I', 'am', 'coding!'];
+describe.only("accessing arrays", () => {
+  describe("getLastElement()", () => {
+    it("can access last element of an array", () => {
+      const words = ["hello", "there", "I", "am", "coding!"];
       const actual = getLastElement(words);
-      const expected = 'coding!';
+      const expected = "coding!";
       expect(actual).toBe(expected);
     });
   });
 
-  describe('getOuterSum()', () => {
-    it('can get the outer sum of an array of two numbers', () => {
+  describe("getOuterSum()", () => {
+    it("can get the outer sum of an array of two numbers", () => {
       const numberPair = [100, 3];
       const actual = getOuterSum(numberPair);
       const expected = 103;
       expect(actual).toBe(expected);
     });
-    it('can get the outer sum for an array of three items', () => {
+    it("can get the outer sum for an array of three items", () => {
       const numberPair = [100, 4, 3];
       const actual = getOuterSum(numberPair);
       const expected = 103;
       expect(actual).toBe(expected);
     });
-    it('can get the outer sum for an array of multiple items (more than 3)', () => {
+    it("can get the outer sum for an array of multiple items (more than 3)", () => {
       const numberPair = [100, 4, 3, 57, 98, 2, 41];
       const actual = getOuterSum(numberPair);
       const expected = 141;
@@ -38,66 +38,66 @@ describe('accessing arrays', () => {
     });
   });
 
-  describe('getAnyItem()', () => {
-    it('can access an array using an index less than the array length', () => {
-      let arr = ['a', 'b', 'c'];
+  describe("getAnyItem()", () => {
+    it("can access an array using an index less than the array length", () => {
+      let arr = ["a", "b", "c"];
       let actual = getAnyItem(arr, 0);
-      let expected = 'a';
+      let expected = "a";
       expect(actual).toBe(expected);
       actual = getAnyItem(arr, 1);
-      expected = 'b';
+      expected = "b";
       expect(actual).toBe(expected);
       actual = getAnyItem(arr, 2);
-      expected = 'c';
+      expected = "c";
       expect(actual).toBe(expected);
     });
-    it('can access an array using an index equal to the array length', () => {
-      const arr = ['a', 'b', 'c'];
+    it("can access an array using an index equal to the array length", () => {
+      const arr = ["a", "b", "c"];
       const actual = getAnyItem(arr, 3);
-      const expected = 'a';
+      const expected = "a";
       expect(actual).toBe(expected);
     });
-    it('can access an array using an index greater than the array length', () => {
-      let arr = ['a', 'b', 'c'];
+    it("can access an array using an index greater than the array length", () => {
+      let arr = ["a", "b", "c"];
       let actual = getAnyItem(arr, 4);
-      let expected = 'b';
+      let expected = "b";
       expect(actual).toBe(expected);
       actual = getAnyItem(arr, 5);
-      expected = 'c';
+      expected = "c";
       expect(actual).toBe(expected);
     });
   });
 
-  describe('getMiddle()', () => {
-    it('can access middle item for an array containing one item', () => {
-      const arr = ['LEEDS!'];
+  describe("getMiddle()", () => {
+    it("can access middle item for an array containing one item", () => {
+      const arr = ["LEEDS!"];
       const actual = getMiddle(arr);
-      const expected = ['LEEDS!'];
+      const expected = ["LEEDS!"];
       expect(actual).toEqual(expected);
     });
-    it('can access middle two items in an array contaninig two items', () => {
-      const arr = ['NORTHCODERS', 'LEEDS'];
+    it("can access middle two items in an array contaninig two items", () => {
+      const arr = ["NORTHCODERS", "LEEDS"];
       const actual = getMiddle(arr);
-      const expected = ['NORTHCODERS', 'LEEDS'];
+      const expected = ["NORTHCODERS", "LEEDS"];
       expect(actual).toEqual(expected);
     });
-    it('can access middle item in an odd length array of multiple (more than 1) items', () => {
-      const arr = ['Javascript!', 'woo', 'LEEDS!', 'yorkshire', 'coding'];
+    it("can access middle item in an odd length array of multiple (more than 1) items", () => {
+      const arr = ["Javascript!", "woo", "LEEDS!", "yorkshire", "coding"];
       const actual = getMiddle(arr);
-      const expected = ['LEEDS!'];
+      const expected = ["LEEDS!"];
       expect(actual).toEqual(expected);
     });
-    it('can access middle two items in an even length array of more than 2 items', () => {
+    it("can access middle two items in an even length array of more than 2 items", () => {
       const arr = [
-        'Javascript!',
-        'woo',
-        'LEEDS!',
-        'yorkshire',
-        'coding',
-        'northcoders',
+        "Javascript!",
+        "woo",
+        "LEEDS!",
+        "yorkshire",
+        "coding",
+        "northcoders",
       ];
       const actual = getMiddle(arr);
-      const expected = ['LEEDS!', 'yorkshire'];
+      const expected = ["LEEDS!", "yorkshire"];
       expect(actual).toEqual(expected);
     });
   });
